@@ -34,10 +34,10 @@ class Binary:
                 current = m.group(1)
                 g[current]
                 continue
-            fields = l.split('\t', 3)
-            if len(fields) < 3:
+            fields = l.split('\t', 2)
+            if len(fields) < 2:
                 continue
-            ia = fields[2].split()
+            ia = fields[-1].split()
             instr = ia[0]
             trg = ia[-1]
             if self._is_branch(instr) and '<' in trg:
